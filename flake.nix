@@ -1,6 +1,4 @@
 {
-  inputs = { nixpkgs.url = "nixpkgs/nixos-23.05"; };
-
   outputs = inputs@{ self, nixpkgs, ... }:
     let
       lib = nixpkgs.lib;
@@ -14,7 +12,8 @@
 
         value = { path = ./${name}; };
       });
-    in {
-      templates = builtins.listToAttrs templates; 
+    in
+    {
+      templates = builtins.listToAttrs templates;
     };
 }
