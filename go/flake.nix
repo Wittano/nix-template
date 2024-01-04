@@ -21,15 +21,7 @@
       devShells.${system}.default = pkgs.mkShell {
         hardeningDisable = [ "all" ];
 
-        env = [{
-          name = "DEBUG_ARGS";
-          value = "";
-        }];
-
-        commands = [{
-          name = "sync";
-          command = "${pkgs.go}/bin/go mod tidy";
-        }];
+        DEBUG_ARGS = "";
 
         buildInputs = with pkgs; [
           go
